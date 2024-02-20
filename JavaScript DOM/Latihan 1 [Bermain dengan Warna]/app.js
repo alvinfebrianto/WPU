@@ -17,3 +17,25 @@ randomColor.addEventListener("click", function () {
   const b = Math.round(Math.random() * 255 + 1);
   document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
 });
+
+const redSlider = document.querySelector("input[name=redSlider]");
+const greenSlider = document.querySelector("input[name=greenSlider]");
+const blueSlider = document.querySelector("input[name=blueSlider]");
+redSlider.addEventListener("input", function () {
+  const r = redSlider.value;
+  const g = greenSlider.value;
+  const b = blueSlider.value;
+  document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+});
+greenSlider.addEventListener("input", function () {
+  const r = redSlider.value;
+  const g = greenSlider.value;
+  const b = blueSlider.value;
+  document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+});
+blueSlider.addEventListener("input", function () {
+  const r = redSlider.value;
+  const g = greenSlider.value;
+  const b = blueSlider.value;
+  document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+});
