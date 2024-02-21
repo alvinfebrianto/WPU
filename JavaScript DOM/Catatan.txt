@@ -12,3 +12,11 @@ Manipulasi Node
 - node.insertBefore()
 - parentNode.removeChild()
 - parentNode.replaceChild()
+
+DOM Traversal Method
+- parentNode → node
+- parentElement → element
+- nextSibling → node
+- nextElementSibling → element
+- previousSibling → node
+- previousElementSibling → element
