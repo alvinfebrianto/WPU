@@ -4,17 +4,11 @@
   margin: 30px auto;
   padding: 5px;
   box-sizing: border-box;
-}
-
-.container::after {
-  content: "";
-  display: block;
-  clear: both;
+  display: flex;
 }
 
 .container div {
   width: 100px;
   height: 100px;
   background-color: rgb(19, 133, 255);
-  float: left;
 }
