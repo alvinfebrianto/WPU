@@ -6,13 +6,20 @@
   padding: 5px;
   box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
+  align-content: center;
   /* flex-direction: column; */
-  /* flex-wrap: wrap; */
   /* justify-content: space-around; */
-  align-items: center;
+  /* align-items: center; */
 }
 
-.container div {
+.one,
+.two {
+  display: flex;
+}
+
+.one div,
+.two div {
   width: 100px;
   height: 100px;
   background-color: rgb(19, 133, 255);
