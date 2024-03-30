@@ -20,4 +20,5 @@
 
 .container div.dua {
   flex-grow: 3;
+  align-self: center;
 }
