@@ -10,7 +10,8 @@ body {
 .container-satu,
 .container-dua,
 .container-tiga,
-.container-empat {
+.container-empat,
+.container-lima {
   max-width: 1000px;
   margin: 50px auto;
 }
@@ -77,6 +78,26 @@ body {
 }
 .card.besar {
   transform: scale(1.1);
+}
+
+/* Latihan 5 */
+.container-lima {
+  width: 500px;
+  height: 500px;
+  border: 3px solid black;
+  display: flex;
+}
+.kotak {
+  width: 100px;
+  height: 100px;
+  background-color: brown;
+  color: white;
+  text-align: center;
+  margin: auto;
+  display: flex;
+}
+.kotak span {
+  margin: auto;
 }
 
 /* Responsive */
