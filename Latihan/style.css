@@ -6,13 +6,17 @@ body {
 body {
   background-color: #ddd;
   line-height: 1.65;
-  padding-bottom: 1000px;
+}
+.container-satu,
+.container-dua,
+.container-tiga,
+.container-empat {
+  max-width: 1000px;
+  margin: 50px auto;
 }
 
 /* Latihan 1 */
 .container-satu {
-  max-width: 800px;
-  margin: 50px auto;
   background-color: #fff;
   padding: 20px;
   box-sizing: border-box;
@@ -22,10 +26,6 @@ body {
 }
 
 /* Latihan 2 */
-.container-dua {
-  max-width: 800px;
-  margin: 50px auto;
-}
 .layanan {
   padding: 20px;
   box-sizing: border-box;
@@ -43,8 +43,6 @@ body {
 
 /* Latihan 3 */
 .container-tiga {
-  max-width: 800px;
-  margin: 50px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -56,8 +54,33 @@ body {
   width: 100%;
 }
 
+/* Latihan 4 */
+.container-empat {
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  background-color: #eee;
+  overflow: hidden;
+}
+.card .header {
+  height: 150px;
+  background-color: #666;
+}
+.card .content {
+  text-align: center;
+  padding: 20px 2px;
+}
+.card.besar {
+  transform: scale(1.1);
+}
+
 /* Responsive */
-@media (min-width: 800px) {
+@media (min-width: 1000px) {
   .kolom-utama {
     flex: 3;
     order: 2;
@@ -79,5 +102,13 @@ body {
   }
   .thumbnail {
     width: 25%;
+  }
+  .container-empat {
+    display: flex;
+    flex-direction: row;
+  }
+  .card {
+    margin: 10px;
+    flex: 1;
   }
 }
