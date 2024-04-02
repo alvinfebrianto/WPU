@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive Navbar</title>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><h4>Alvin Febrianto</h4></div>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Product</a></li>
+        <li><a href="">Service</a></li>
+        <li><a href="">Gallery</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <input type="checkbox" /><span></span><span></span><span></span>
+      </div>
+    </nav>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav ul");
+
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
+  </body>
+</html>
