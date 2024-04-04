@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Image Gallery</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #ddd;
+        text-align: center;
+        margin: 30px;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+      .gallery {
+        width: 80%;
+        margin: 20px auto;
+        border: 5px solid white;
+        list-style: none;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Image Gallery</h2>
+    <ul class="gallery">
+      <li><img src="img/1.jpeg" /></li>
+      <li><img src="img/2.jpg" /></li>
+      <li><img src="img/3.jpg" /></li>
+      <li><img src="img/4.jpg" /></li>
+      <li><img src="img/5.jpg" /></li>
+      <li><img src="img/6.jpg" /></li>
+      <li><img src="img/7.jpg" /></li>
+      <li><img src="img/8.jpg" /></li>
+      <li><img src="img/9.jpg" /></li>
+      <li><img src="img/10.jpg" /></li>
+    </ul>
+  </body>
+</html>
