@@ -46,3 +46,21 @@ body {
 .col-rem p {
   font-size: 1.5rem;
 } */
+
+.btn {
+  display: inline-block;
+  background: #333;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  padding: 1em 3em;
+  margin: 0 1.5rem;
+}
+.btn-sm {
+  font-size: 0.5em;
+}
+.btn-lg {
+  font-size: 2em;
+}
