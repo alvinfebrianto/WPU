@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { theme: { extend: { spacing: { 13: "3.25rem" } } } };
+      tailwind.config = {
+        theme: {
+          extend: {
+            spacing: { 13: "3.25rem" },
+            fontFamily: { inter: ["Inter"] },
+          },
+        },
+      };
     </script>
-    <style type="text/tailwindcss">
-      * {
-        border: 1px solid salmon;
-      }
-    </style>
     <title>Basic Utility | TailwindCSS</title>
   </head>
   <body>
@@ -25,7 +33,29 @@
     <section class="mb-10">
       <h2>Sizing</h2>
       <div class="w-32 h-32">Kotak 1</div>
-      <div class="max-w-xs min-h-screen">Kotak 2</div>
+    </section>
+    <section class="mb-96 font-inter max-w-3xl mx-auto">
+      <h2 class="mb-4">Belajar Mengenai Typography pada TailwindCSS</h2>
+      <div class="mb-4">By Alvin Febrianto, 1 Januari 2024</div>
+      <p class="mb-4">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero ratione
+        sequi a nisi nam maxime impedit excepturi tempore! Recusandae cum aut
+        fugiat, quia omnis ad praesentium dolores commodi perspiciatis pariatur?
+        Quod explicabo, aut aliquam facilis omnis maiores nobis eos dicta
+        pariatur, possimus perspiciatis quisquam distinctio facere maxime
+        tempora, totam consequuntur!
+      </p>
+      <p class="mb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque deserunt
+        vitae nam nisi omnis reiciendis voluptates quasi exercitationem nulla
+        tenetur?
+      </p>
+      <p class="mb-4">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
+        facilis tempore! Quos, deserunt non atque ducimus, suscipit quis
+        expedita aliquam neque ipsa autem facilis sapiente quasi rerum!
+        Praesentium, asperiores voluptate.
+      </p>
     </section>
   </body>
 </html>
