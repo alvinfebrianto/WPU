@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { theme: { spacing: { 13: "3.25rem" } } };
+      tailwind.config = { theme: { extend: { spacing: { 13: "3.25rem" } } } };
     </script>
     <style type="text/tailwindcss">
       * {
@@ -20,6 +20,7 @@
     <section>
       <h2>Spacing</h2>
       <div class="m-13">Margin</div>
+      <div class="p-8">Padding</div>
     </section>
   </body>
 </html>
