@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="src/output.css" rel="stylesheet" />
+    <link href="src/build.css" rel="stylesheet" />
     <title>Portfolio</title>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->
@@ -63,26 +74,12 @@
                 </li>
                 <li class="group">
                   <a
-                    href="#clients"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
-                    >Clients</a
-                  >
-                </li>
-                <li class="group">
-                  <a
                     href="#blog"
                     class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
                     >Blog</a
                   >
                 </li>
-                <li class="group">
-                  <a
-                    href="#contact"
-                    class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white"
-                    >Contact</a
-                  >
-                </li>
-                <li class="mt-2 flex items-center pl-8 lg:mt-0">
+                <li class="mt-2 flex items-center pl-8 md:mt-0">
                   <div class="flex">
                     <span class="mr-2 text-sm text-slate-500">light</span>
                     <input
