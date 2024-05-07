@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+        display: block;
+        margin: auto;
+      }
+    </style>
+    <title>Loop - For</title>
+  </head>
+  <body>
+    <h1>Loop - For</h1>
+    <img src="https://telegra.ph/file/c8ca551224949fcc06e77.png" />
+
+    <script>
+      // Challenge angkot2.js
+      var jmlAngkot = 10;
+      var angkotBeroperasi = 6;
+      var noAngkot = 1;
+      while (noAngkot <= angkotBeroperasi) {
+        console.log("Angkot No. " + noAngkot + " beroperasi dengan baik.");
+        noAngkot++;
+      }
+
+      for (noAngkot = angkotBeroperasi + 1; noAngkot <= jmlAngkot; noAngkot++) {
+        console.log("Angkot No. " + noAngkot + " sedang tidak beroperasi.");
+      }
+      // Alternatif: while pada angkot2.js diulang sebanyak 7×, tapi karena 7 adalah false di while-nya maka 7 keluar dan masuk di loop bawahnya yaitu for. Maka for akan ngecek mulai dari angka 7 sampai 11. Tapi karena 11 adalah false di for, maka loop berhenti.
+      // for (noAngkot; noAngkot <= jmlAngkot; noAngkot++) {
+      //   console.log("Angkot No. " + noAngkot + " sedang tidak beroperasi.");
+      // }
+
+      // for (noAngkot = 7; noAngkot <= jmlAngkot; noAngkot++) {
+      //   console.log("Angkot No. " + noAngkot + " sedang tidak beroperasi.");
+      // }
+
+      // for (var angkotRusak = 7; angkotRusak <= jmlAngkot; angkotRusak++) {
+      //   console.log("Angkot No. " + angkotRusak + " sedang tidak beroperasi.");
+      // }
+    </script>
+  </body>
+</html>
