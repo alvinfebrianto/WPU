@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      img {
+        display: block;
+        margin: auto;
+        width: 40vh;
+      }
+    </style>
+    <title>Conditional - Switch</title>
+  </head>
+  <body>
+    <h1>Conditional - Switch</h1>
+    <img src="https://i.ibb.co/DCc01xT/image.png" />
+
+    <script>
+      var angka = prompt("Masukkan Angka:");
+      switch (angka) {
+        case "1":
+          alert("Anda memasukkan angka 1");
+          break;
+        case "2":
+          alert("Anda memasukkan angka 2");
+          break;
+        case "3":
+          alert("Anda memasukkan angka 3");
+          break;
+        default:
+          alert("Angka yang Anda masukkan salah.");
+          break;
+      }
+
+      var item = prompt(
+        "Masukkan nama makanan/minuman: \n(contoh: nasi, daging, susu, hamburger, softdrink)"
+      );
+      switch (item) {
+        case "nasi":
+        case "daging":
+        case "susu":
+          alert("Makanan/minuman SEHAT!");
+          break;
+        case "hamburger":
+        case "softdrink":
+          alert("Makanan/minuman TIDAK SEHAT!");
+          break;
+        default:
+          alert("Anda memasukkan nama makanan/minuman yang SALAH!");
+          break;
+      }
+    </script>
+  </body>
+</html>
