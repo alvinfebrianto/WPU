@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Suwit Jawa</title>
+  </head>
+  <body>
+    <script>
+      var tanya = true;
+      while (tanya) {
+        // Menangkap pilihan player
+        var player = prompt("Silakan pilih: gajah / semut / orang");
+
+        // Menangkap pilihan computer & Men-generate bilangan random
+        var computer = Math.random();
+        if (computer < 0.34) {
+          computer = "gajah";
+        } else if (computer >= 0.34 && computer < 0.67) {
+          computer = "orang";
+        } else {
+          computer = "semut";
+        }
+
+        // Menentukan rules
+        var hasil = "";
+        if (player == computer) {
+          hasil = "SERI!";
+        } else if (player == "gajah") {
+          // if (computer == "orang") {
+          //   hasil = "MENANG!";
+          // } else {
+          //   hasil = "KALAH!";
+          // }
+          hasil = computer == "orang" ? "MENANG!" : "KALAH!";
+        } else if (player == "orang") {
+          hasil = computer == "gajah" ? "KALAH!" : "MENANG!";
+        } else if (player == "semut") {
+          hasil = computer == "orang" ? "KALAH!" : "MENANG!";
+        } else {
+          hasil = "menginputkan pilihan yang salah!";
+        }
+
+        // Menampilkan hasil
+        alert(
+          "Kamu memilih: " +
+            player +
+            " & komputer memilih: " +
+            computer +
+            "\nMaka hasilnya: Kamu " +
+            hasil
+        );
+
+        tanya = confirm("Main lagi?");
+      }
+    </script>
+  </body>
+</html>
