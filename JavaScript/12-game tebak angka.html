@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tebak Angka</title>
+  </head>
+  <body>
+    <script>
+      var ulangi = true;
+      while (ulangi) {
+        var kesempatan = 3;
+        while (kesempatan != 0) {
+          var computer = Math.floor(Math.random() * 10) + 1;
+          var player = parseInt(
+            prompt(
+              "Tebak Angka! \nMasukkan angka 1 - 10\nKesempatan Anda " +
+                kesempatan +
+                "×"
+            )
+          );
+
+          var hasil = "";
+          player = isNaN(player) ? 0 : player;
+          if (player != computer) {
+            hasil =
+              player > computer
+                ? "Nilai terlalu tinggi"
+                : "Nilai terlalu rendah";
+            kesempatan = kesempatan - 1;
+          } else {
+            hasil = "Benar, Nilai Sama!";
+            kesempatan = 0;
+          }
+
+          alert(
+            "Nilai yang kamu pilih: " +
+              player +
+              "\nNilai yang komputer pilih: " +
+              computer +
+              "\n\n" +
+              hasil
+          );
+        }
+
+        ulangi = confirm("Coba lagi?");
+      }
+      alert("Terima Kasih");
+    </script>
+  </body>
+</html>
