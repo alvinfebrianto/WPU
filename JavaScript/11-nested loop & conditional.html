@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nested Loop & Conditional</title>
+  </head>
+  <body>
+    <h1>Nested Loop & Conditional</h1>
+
+    <script>
+      var s = "";
+      for (var i = 0; i < 10; i++) {
+        for (var j = 0; j <= i; j++) {
+          s += "*";
+        }
+        s += "\n";
+      }
+      console.log(s);
+      console.log("\n");
+      var string = "";
+      for (var item = 10; item > 0; item--) {
+        for (var jml = 0; jml < item; jml++) {
+          string += "*";
+        }
+        string += "\n";
+      }
+      console.log(string);
+    </script>
+  </body>
+</html>
