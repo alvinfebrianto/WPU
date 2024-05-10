@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 65vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Function - Create & Run</title>
+  </head>
+  <body>
+    <h1>Function - Create & Run</h1>
+    <picture>
+      <img src="https://i.ibb.co/CzTk1HW/image.png" />
+      <img src="https://i.ibb.co/ZzFx8dw/image.png" />
+      <img src="https://i.ibb.co/yX8nVRZ/image.png" />
+      <img src="https://i.ibb.co/D9bLkvV/image.png" />
+      <img src="https://i.ibb.co/vBhht0T/image.png" />
+    </picture>
+
+    <script>
+      // Membuat function
+      function jumlahVolumeDuaKubus(a, b) {
+        var volumeA;
+        var volumeB;
+        var total;
+
+        volumeA = a * a * a;
+        volumeB = b * b * b;
+        total = volumeA + volumeB;
+
+        return total;
+      }
+
+      // Menjalankan function
+      console.log(jumlahVolumeDuaKubus(4, 5));
+      console.log(jumlahVolumeDuaKubus(8, 7));
+    </script>
+  </body>
+</html>
