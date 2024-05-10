@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 65vh;
+        border: 1px dashed darkslategray;
+      }
+      img.two {
+        width: 50vh;
+      }
+    </style>
+    <title>Function - Intro</title>
+  </head>
+  <body>
+    <h1>Function - Intro</h1>
+    <picture>
+      <img src="https://i.ibb.co/ZXSpkwT/image.png" />
+      <img src="https://i.ibb.co/wMjWZ0Y/image.png" class="two" />
+      <img src="https://i.ibb.co/6rxfMxQ/image.png" />
+      <img src="https://i.ibb.co/ZYmJfr1/image.png" />
+      <img src="https://i.ibb.co/Dtnggw6/image.png" />
+      <img src="https://i.ibb.co/6XQntNp/image.png" />
+      <img src="https://i.ibb.co/80xkFm2/image.png" />
+    </picture>
+
+    <script>
+      function jumlahDuaBilangan(a, b) {
+        var total;
+        total = a + b;
+
+        return total;
+      }
+      alert(jumlahDuaBilangan(1500, 17.5));
+    </script>
+  </body>
+</html>
