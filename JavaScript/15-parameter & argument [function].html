@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 65vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Function - Parameter & Argument</title>
+  </head>
+  <body>
+    <h1>Function - Parameter & Argument</h1>
+    <picture>
+      <img src="https://i.ibb.co/jb2mzQW/image.png" />
+      <img src="https://i.ibb.co/nc0ff60/image.png" />
+      <img src="https://i.ibb.co/kcRC3J7/image.png" />
+      <img src="https://i.ibb.co/Bj5vH5z/image.png" />
+    </picture>
+
+    <script>
+      // function tambah(a, b) {
+      //   return a + b;
+      // }
+      // var a = parseInt(prompt("Masukkan nilai 1: "));
+      // var b = parseInt(prompt("Masukkan nilai 2: "));
+      // var hasil = tambah(a, b);
+      // console.log(hasil);
+
+      function tambah2(a, b) {
+        return a + b;
+      }
+      function kali2(a, b) {
+        return a * b;
+      }
+      var hasil2 = kali2(tambah2(3, 4), tambah2(2, 6));
+      console.log(hasil2);
+
+      function tambah3() {
+        var hasil3 = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          hasil3 += arguments[i];
+        }
+        return hasil3;
+      }
+      var array = tambah3(1, 2, 3, 4);
+      console.log(array);
+    </script>
+  </body>
+</html>
