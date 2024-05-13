@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 55vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Function - Variable Scope</title>
+  </head>
+  <body>
+    <h1>Function - Variable Scope</h1>
+    <picture>
+      <img src="https://i.ibb.co/LDypN8g/image.png" />
+      <img src="https://i.ibb.co/QjYWTjV/image.png" />
+    </picture>
+
+    <script>
+      // Global Scope / Window Scope
+      // var a = 1;
+
+      // function functionScope() {
+      //   var b = 2;
+      //   console.log(a);
+      // }
+
+      // functionScope();
+      // console.log(b);
+
+      var a = 1;
+
+      function functionScope() {
+        var a = 2; // Name Conflict
+        console.log(window.a); // Jika Ingin Mengakses Variabel Global di dalam Function
+        // a = 2; Jika Tanpa 'var' Artinya akan Mengganti Variabel Global 1 dengan 2
+      }
+
+      functionScope();
+      console.log(a);
+
+      // var a = 1;
+
+      // function functionScope(a) {
+      //   console.log(a);
+      // }
+
+      // functionScope(2); Akan Tampil 2 Karena pada Function Terdapat Argumen 2
+      // functionScope(a); Akan Tampil 1 Karena Mengacu pada Variabel Global. Mengapa? Karena Parameter a pada Function functionScope Adalah Variabel Lokal
+      // console.log(a); Akan Tampil 1 Karena Mengacu pada Variabel Global
+    </script>
+  </body>
+</html>
