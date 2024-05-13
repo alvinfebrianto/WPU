@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Function - Declaration vs Expression</title>
+  </head>
+  <body>
+    <h1>Function - Declaration vs Expression</h1>
+    <picture>
+      <img src="https://i.ibb.co/Vt5669y/image.png" />
+      <img src="https://i.ibb.co/t3Yt2LY/image.png" />
+      <img src="https://i.ibb.co/SvmRPb6/image.png" />
+      <img src="https://i.ibb.co/QQZt4Dh/image.png" />
+    </picture>
+
+    <script>
+      // Declaration
+      function tampilPesanD(nama) {
+        console.log("halo " + nama);
+      }
+      tampilPesanD("Alvin");
+
+      // Pada Declaration jika memanggil fungsi dulu lalu mendefinisikan, maka tetap bisa
+      // tampilPesanD("Alvin");
+      // function tampilPesanD(nama) {
+      //   console.log("halo " + nama);
+      // }
+
+      // Expression
+      var tampilPesanE = function (nama) {
+        console.log("halo " + nama);
+      };
+      tampilPesanE("Alvin");
+
+      // Pada Expression jika memanggil fungsi dulu lalu mendefinisikan, maka akan error
+      // tampilPesan("Alvin");
+      // var tampilPesan = function (nama) {
+      //   console.log("halo " + nama);
+      // };
+    </script>
+  </body>
+</html>
