@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      picture img {
+        width: 65vh;
+        border: 1px dashed darkslategray;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        margin: 0;
+        padding: 0;
+      }
+      picture img.six {
+        width: 50vh;
+      }
+      picture img.larger {
+        width: 80vh;
+      }
+    </style>
+    <title>Function - Recursion</title>
+  </head>
+  <body>
+    <h1>Function - Recursion</h1>
+    <picture>
+      <img src="https://i.ibb.co/f180cBM/image.png" />
+      <div>
+        <h2>Bagaimana Function Beroperasi:</h2>
+        <img src="https://i.ibb.co/n76tLgy/image.png" />
+      </div>
+      <div>
+        <h2>Konsep Rekursif pada Function:</h2>
+        <img src="https://i.ibb.co/kHp6cQF/image.png" />
+      </div>
+      <img src="https://i.ibb.co/ftnXmf6/image.png" />
+      <div>
+        <h2>Wajib! Agar Tidak Loop Terus</h2>
+        <img src="https://i.ibb.co/DD5JJzr/image.png" />
+      </div>
+      <img src="https://i.ibb.co/HP4PzT5/image.png" class="six" />
+      <img src="https://i.ibb.co/YT0ct5K/image.png" class="larger" />
+      <img src="https://i.ibb.co/59xNtSC/image.png" />
+      <img src="https://i.ibb.co/5xdPY5M/image.png" class="larger" />
+    </picture>
+
+    <script>
+      // Mencetak 10 sampai 1 (mundur) menggunakan loop
+      // for (var i = 10; i >= 1; i--) {
+      //   console.log(i);
+      // }
+
+      function tampilAngka(n) {
+        if (n === 0) return;
+        console.log(n);
+        return tampilAngka(n - 1);
+      }
+      tampilAngka(10);
+
+      function faktorial(n) {
+        if (n === 0) return 1;
+        return n * faktorial(n - 1);
+      }
+      console.log(faktorial(5));
+    </script>
+  </body>
+</html>
