@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Array - Intro</title>
+  </head>
+  <body>
+    <h1>Array - Intro</h1>
+    <picture>
+      <img src="https://i.ibb.co/w7YMz8H/image.png" />
+      <img src="https://i.ibb.co/3y3cn8n/image.png" />
+      <img src="https://i.ibb.co/jbmy8dz/image.png" />
+      <img src="https://i.ibb.co/1sL85vp/image.png" />
+      <img src="https://i.ibb.co/QKYcyWt/image.png" />
+      <img src="https://i.ibb.co/0X8NmCR/image.png" />
+      <img src="https://i.ibb.co/FzWHFMQ/image.png" />
+      <img src="https://i.ibb.co/ygCZtDG/image.png" />
+      <img src="https://i.ibb.co/GdDq7C6/image.png" />
+    </picture>
+
+    <script>
+      // Key & Value Pair
+      var hewan = ["Kucing", "Kelinci", "Monyet", "Panda", "Koala", "Sapi"];
+      console.log(hewan[4]);
+
+      // Array Bertipe Object
+      console.log(typeof hewan);
+
+      // Array Bertipe Object Memiliki Method Length
+      console.log(hewan.length);
+
+      // Array Multidimensi / Array Bersarang
+      var myFunc = function () {
+        alert("Hello Array!");
+      };
+      var myArray = ["text", 2, false, myFunc, [4, 5, 6]];
+      console.log(myArray[4][1]);
+    </script>
+  </body>
+</html>
