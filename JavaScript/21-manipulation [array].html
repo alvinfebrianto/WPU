@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Array - Manipulation</title>
+  </head>
+  <body>
+    <h1>Array - Manipulation</h1>
+    <picture>
+      <img src="https://i.ibb.co/PQWfwdc/image.png" />
+      <img src="https://i.ibb.co/t456L9h/image.png" />
+    </picture>
+
+    <script>
+      // Menambah Isi Array (Menampilkan sebagai Object)
+      var arr1 = [];
+      arr1[0] = "Alvin";
+      arr1[1] = "Febrianto";
+      console.log(arr1);
+
+      // Menghapus Isi Array
+      var arr2 = ["Alvin", "Febrianto"];
+      arr2[1] = undefined;
+      console.log(arr2);
+
+      // Menampilkan Isi Array (Bukan sebagai Object)
+      var arr3 = ["Alvin", "Febrianto"];
+      for (var i = 0; i < arr3.length; i++) {
+        console.log("Mahasiswa ke-" + (i + 1) + ": " + arr3[i]);
+      }
+
+      // Method Array - Join [Menggabungkan Seluruh Isi Array & Mengubahnya Menjadi String]
+      var arr4 = ["Alvin", "Febrianto"];
+      console.log(arr4.join(" "));
+
+      // Method Array - Push & Pop [Menambahkan / Menghapus Elemen Terakhir Array]
+      arr4.push("Alfian", "Bagas"); // Untuk Push Dapat Langsung Menambahkan Beberapa Elemen
+      arr4.pop(); // Untuk Pop Satu-Satu
+      // arr4.pop();
+      console.log(arr4.join(" "));
+
+      // Method Array - Unshift & Shift [Menambahkan / Menghapus Elemen Pertama Array]
+      arr4.unshift("Bagas");
+      arr4.shift(); // Shift & Pop Benar-Benar Menghilangkan Elemennya, Bukan Mengubahnya Menjadi Undefined
+      console.log(arr4.join(" "));
+    </script>
+  </body>
+</html>
