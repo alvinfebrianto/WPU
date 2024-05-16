@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Array - Foreach, Map, & Sort</title>
+  </head>
+  <body>
+    <h1>Array - Foreach, Map, & Sort</h1>
+    <picture>
+      <img src="https://i.ibb.co/PQWfwdc/image.png" />
+      <img src="https://i.ibb.co/84F603X/tHWw1Fj.png" />
+    </picture>
+
+    <script>
+      // Method Array - forEach [Mirip Seperti Loop For, Namun Lebih Singkat]
+      var angka = [1, 2, 3, 4, 5, 6, 7, 8];
+      // for (var i = 0; i < angka.length; i++) {
+      //   console.log(angka[i]);
+      // }
+      angka.forEach(function (e) {
+        console.log(e);
+      });
+
+      var nama = ["Alvin", "Febrianto", "Gon"];
+      nama.forEach(function (e, i) {
+        console.log("Mahasiswa ke-" + (i + 1) + " adalah: " + e);
+      });
+
+      // Method Array - Map [Mirip Seperti forEach, Namun Map Mengembalikan Array]
+      var angka2 = [1, 2, 5, 3, 6, 8, 4];
+      var simpanArray = angka.map(function (e) {
+        return e * 2;
+      });
+      console.log(simpanArray.join(" - "));
+
+      // Method Array - Sort [Mengurutkan Isi Array]
+      var angka3 = [1, 2, 10, 5, 20, 3, 6, 8, 4];
+      angka3.sort(function (a, b) {
+        return a - b;
+      });
+      console.log(angka3.join(" - "));
+    </script>
+  </body>
+</html>
