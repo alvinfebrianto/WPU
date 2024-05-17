@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+      h3 {
+        margin: 0 0 0.5rem 0;
+        padding: 0;
+      }
+    </style>
+    <title>Object - Intro</title>
+  </head>
+  <body>
+    <h1>Object - Intro</h1>
+    <picture>
+      <img src="https://i.ibb.co/7b45Dbk/brave-2024-05-17-14-10-33.png" />
+      <img src="https://i.ibb.co/4NpbpbD/brave-2024-05-17-14-13-53.png" />
+      <img src="https://i.ibb.co/yfBvT1H/brave-2024-05-17-14-24-12.png" />
+      <div>
+        <h3>Properti: Variable yang ada di dalam object</h3>
+        <h3>Method: Function yang ada di dalam object</h3>
+        <img
+          src="https://i.ibb.co/FXvm30m/brave-2024-05-17-14-31-14.png"
+        /></div
+    ></picture>
+
+    <script>
+      // Membuat Object Literal
+      var mhs = {
+        nama: "Alvin Febrianto",
+        umur: 22,
+        ips: [3.8, 3.8, 3.8],
+        alamat: {
+          jalan: "Kandangan",
+          kota: "Surabaya",
+          provinsi: "Jawa Timur",
+        },
+      };
+
+      console.log(mhs.nama);
+      console.log(mhs["alamat"]["kota"]);
+    </script>
+  </body>
+</html>
