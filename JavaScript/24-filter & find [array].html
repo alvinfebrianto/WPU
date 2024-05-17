@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Array - Filter & Find</title>
+  </head>
+  <body>
+    <h1>Array - Filter & Find</h1>
+    <picture>
+      <img src="https://i.ibb.co/PQWfwdc/image.png" />
+      <img src="https://i.ibb.co/d6ywgx2/brave-2024-05-16-16-08-02.png" />
+    </picture>
+
+    <script>
+      var angka = [1, 2, 10, 5, 20, 3, 6, 8, 4];
+
+      // Method Array - Filter [Mencari Elemen pada Array, Filter Dapat Mengembalikan Banyak Nilai]
+      var angka2 = angka.filter(function (e) {
+        return e > 5;
+      });
+      console.log(angka2.join(" - "));
+
+      // Method Array - Find [Mencari Elemen pada Array, Filter Dapat Mengembalikan Banyak Nilai]
+      var angka3 = angka.find(function (e) {
+        return e > 5;
+      });
+      console.log(angka3);
+    </script>
+  </body>
+</html>
