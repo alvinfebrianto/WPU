@@ -24,6 +24,10 @@
       <img src="https://i.ibb.co/vH1wdPZ/brave-2024-05-17-09-31-16.png" />
       <img src="https://i.ibb.co/j6GxYjd/brave-2024-05-17-09-32-33.png" />
       <img src="https://i.ibb.co/Dk0nTG0/brave-2024-05-17-09-33-51.png" />
+      <img src="https://i.ibb.co/D761nSH/brave-2024-05-17-10-31-43.png" />
+      <img src="https://i.ibb.co/cXz9TFB/brave-2024-05-17-10-43-39.png" />
+      <img src="https://i.ibb.co/58349KL/brave-2024-05-17-10-44-44.png" />
+      <img src="https://i.ibb.co/M52nY0W/brave-2024-05-17-10-45-18.png" />
     </picture>
     <script>
       var penumpang = [];
@@ -55,6 +59,32 @@
             else if (i == penumpang.length - 1) {
               // Tambah penumpang di akhir array
               penumpang.push(namaPenumpang);
+              // Kembalikan isi array lalu keluar dari function
+              return penumpang;
+            }
+          }
+        }
+      };
+
+      var hapusPenumpang = function (namaPenumpang, penumpang) {
+        // Jika angkot kosong
+        if (penumpang.length == 0) {
+          console.log("Angkot masih kosong.");
+          return penumpang;
+        } else {
+          // Telusuri seluruh kursi dari awal
+          for (var i = 0; i < penumpang.length; i++) {
+            // Jika nama penumpang sesuai
+            if (penumpang[i] == namaPenumpang) {
+              // Hapus penumpang dengan mengubah namanya menjadi undefined
+              penumpang[i] = undefined;
+              // Kembalikan isi array lalu keluar dari function
+              return penumpang;
+            }
+            // Jika tidak ada nama yang sesuai
+            else if (i == penumpang.length - 1) {
+              // Tampilkan pesan kesalahan
+              console.log(namaPenumpang + " tidak ada di dalam angkot.");
               // Kembalikan isi array lalu keluar dari function
               return penumpang;
             }
