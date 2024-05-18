@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 80vh;
+        border: 1px dashed darkslategray;
+      }
+      h3 {
+        margin: 0 0 0.5rem 0;
+        padding: 0;
+      }
+    </style>
+    <title>Object - Create</title>
+  </head>
+  <body>
+    <h1>Object - Create</h1>
+    <picture>
+      <div>
+        <h3>Properti: Variable yang ada di dalam object</h3>
+        <h3>Method: Function yang ada di dalam object</h3>
+        <img src="https://i.ibb.co/FXvm30m/brave-2024-05-17-14-31-14.png" />
+      </div>
+      <img src="https://i.ibb.co/ssr7NKV/brave-2024-05-17-16-05-37.png" />
+      <div>
+        <h3>Constructor: Function yang khusus untuk membuat object</h3>
+        <img src="https://i.ibb.co/QXpnPBm/brave-2024-05-18-09-50-55.png" />
+      </div>
+    </picture>
+
+    <script>
+      // Membuat Object Menggunakan Object Literal
+      var mhs1 = {
+        nama: "Alvin Febrianto",
+        nim: 20091397,
+        email: "alvinfebrianto@unesa.ac.id",
+        jurusan: "Manajemen Informatika",
+      };
+      var mhs2 = {
+        nama: "Roronoa Zoro",
+        nim: 20091397,
+        email: "roronoazoro@gmail.com",
+        jurusan: "Teknik Industri",
+      };
+
+      // Membuat Object Menggunakan Function Declaration
+      function buatObjectMahasiswa(nama, nim, email, jurusan) {
+        var mhs = {};
+        mhs.nama = nama;
+        mhs.nim = nim;
+        mhs.email = email;
+        mhs.jurusan = jurusan;
+        return mhs;
+      }
+      var mhs3 = buatObjectMahasiswa(
+        "Luffy",
+        "20091397",
+        "luffy@yahoo.com",
+        "Teknik Pangan"
+      );
+
+      // Membuat Object Menggunakan Constructor
+      function Mahasiswa(nama, nim, email, jurusan) {
+        // var this = {};
+        this.nama = nama;
+        this.nim = nim;
+        this.email = email;
+        this.jurusan = jurusan;
+        // return this;
+      }
+      var mhs4 = new Mahasiswa(
+        "Erik",
+        "20091397",
+        "erik@hotmail.com",
+        "Teknik Mesin"
+      );
+    </script>
+  </body>
+</html>
