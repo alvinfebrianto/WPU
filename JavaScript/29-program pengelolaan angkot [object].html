@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 80vh;
+        border: 1px dashed darkslategray;
+      }
+      h3,
+      h4 {
+        margin: 0 0 0.2rem 0;
+        padding: 0;
+      }
+    </style>
+    <title>Object - Program Pengelolaan Angkot</title>
+  </head>
+  <body>
+    <h1>Object - Program Pengelolaan Angkot</h1>
+    <picture>
+      <div>
+        <h3>Properti: Variable yang ada di dalam object</h3>
+        <h3>Method: Function yang ada di dalam object</h3>
+        <img src="https://i.ibb.co/FXvm30m/brave-2024-05-17-14-31-14.png" />
+      </div>
+      <img src="https://i.ibb.co/ssr7NKV/brave-2024-05-17-16-05-37.png" />
+      <div>
+        <h3>Constructor: Function yang khusus untuk membuat object</h3>
+        <h3>
+          Secara konvensi, penulisan nama function pada constructor menggunakan
+          PascalCase
+        </h3>
+        <img src="https://i.ibb.co/QXpnPBm/brave-2024-05-18-09-50-55.png" />
+      </div>
+      <div>
+        <h4>
+          This: Sebuah keyword special yang secara otomatis didefinisikan pada
+          setiap function
+        </h4>
+        <h4>
+          Context: Setiap membuat variabel di scope global, artinya variabel
+          ialah properti/method dari object window
+        </h4>
+        <img src="https://i.ibb.co/yFDqvBJ/brave-2024-05-18-10-48-15.png" />
+      </div>
+      <img src="https://i.ibb.co/n7T9FCF/Code-2024-05-18-11-06-29.png" />
+      <img src="https://i.ibb.co/4MFBBPw/Code-2024-05-18-11-07-15.png" />
+      <img src="https://i.ibb.co/nr5cwKd/Code-2024-05-18-11-18-56.png" />
+    </picture>
+
+    <script>
+      function Angkot(sopir, trayek, penumpang, kas) {
+        this.sopir = sopir;
+        this.trayek = trayek;
+        this.penumpang = penumpang;
+        this.kas = kas;
+
+        this.penumpangNaik = function (namaPenumpang) {
+          this.penumpang.push(namaPenumpang);
+          return this.penumpang;
+        };
+
+        this.penumpangTurun = function (namaPenumpang, bayar) {
+          if (this.penumpang.length === 0) {
+            console.log("Angkot masih kosong.");
+            return false;
+          }
+        };
+
+        for (var i = 0; i < this.penumpang.length; i++) {
+          if (this.penumpang[i] == namaPenumpang) {
+            this.penumpang[i] = undefined;
+            this.kas += bayar;
+            return this.penumpang;
+          }
+        }
+      }
+
+      var angkot1 = new Angkot("Alvin", ["Kandangan", "Benowo"], [], 0);
+      var angkot2 = new Angkot("Febrianto", ["Sememi", "Banjarsugihan"], [], 0);
+    </script>
+  </body>
+</html>
