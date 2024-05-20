@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 80vh;
+        border: 1px dashed darkslategray;
+      }
+      h3,
+      h4 {
+        margin: 0 0 0.2rem 0;
+        padding: 0;
+      }
+    </style>
+    <title>Object</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <picture>
+      <div>
+        <h3>Properti: Variable yang ada di dalam object</h3>
+        <h3>Method: Function yang ada di dalam object</h3>
+        <img src="https://i.ibb.co/FXvm30m/brave-2024-05-17-14-31-14.png" />
+      </div>
+      <img src="https://i.ibb.co/ssr7NKV/brave-2024-05-17-16-05-37.png" />
+      <div>
+        <h3>Constructor: Function yang khusus untuk membuat object</h3>
+        <h3>
+          Secara konvensi, penulisan nama function pada constructor menggunakan
+          PascalCase
+        </h3>
+        <img src="https://i.ibb.co/QXpnPBm/brave-2024-05-18-09-50-55.png" />
+      </div>
+      <div>
+        <h4>
+          This: Sebuah keyword special yang secara otomatis didefinisikan pada
+          setiap function
+        </h4>
+        <h4>
+          Context: Setiap membuat variabel di scope global, artinya variabel
+          ialah properti/method dari object window
+        </h4>
+        <img src="https://i.ibb.co/yFDqvBJ/brave-2024-05-18-10-48-15.png" />
+      </div>
+      <img src="https://i.ibb.co/n7T9FCF/Code-2024-05-18-11-06-29.png" />
+      <img src="https://i.ibb.co/4MFBBPw/Code-2024-05-18-11-07-15.png" />
+      <img src="https://i.ibb.co/nr5cwKd/Code-2024-05-18-11-18-56.png" />
+    </picture>
+
+    <script>
+      // 1 - Object Literal
+      let mahasiswa1 = {
+        nama: "Alvin",
+        energi: 10,
+        makan: function (porsi) {
+          this.energi = this.energi + porsi;
+          console.log(`Halo ${this.nama}, selamat makan!`);
+        },
+      };
+      let mahasiswa2 = {
+        nama: "Febrianto",
+        energi: 5,
+        makan: function (porsi) {
+          this.energi = this.energi + porsi;
+          console.log(`Halo ${this.nama}, selamat makan!`);
+        },
+      };
+
+      // 2 - Function Declaration
+      function Mahasiswa1(nama, energi) {
+        let mahasiswa3 = {};
+        mahasiswa3.nama = nama;
+        mahasiswa3.energi = energi;
+
+        mahasiswa3.makan = function (porsi) {
+          this.energi += porsi;
+          console.log(`Halo ${this.nama}, selamat makan!`);
+        };
+        mahasiswa3.main = function (jam) {
+          this.energi -= jam;
+          console.log(`Halo ${this.nama}, selamat bermain!`);
+        };
+
+        return mahasiswa3;
+      }
+      let alvin = Mahasiswa1("Alvin", 10);
+      let febrianto = Mahasiswa1("Febrianto", 5);
+
+      // 3 - Constructor Function
+      function Mahasiswa2(nama, energi) {
+        this.nama = nama;
+        this.energi = energi;
+
+        this.makan = function (porsi) {
+          this.energi += porsi;
+          console.log(`Halo ${this.nama}, selamat makan!`);
+        };
+        this.main = function (jam) {
+          this.energi -= jam;
+          console.log(`Halo ${this.nama}, selamat bermain!`);
+        };
+      }
+      let luffy = new Mahasiswa2("Luffy", 10);
+      let zoro = new Mahasiswa2("Zoro", 5);
+    </script>
+  </body>
+</html>
