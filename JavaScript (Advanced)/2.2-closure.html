@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      div img {
+        display: block;
+      }
+      img {
+        width: 65vh;
+        border: 1px dashed darkslategray;
+      }
+      picture div img.smaller {
+        width: 40vh;
+      }
+      h4 {
+        margin: 0;
+        padding: 0;
+        max-width: 40vw;
+      }
+    </style>
+    <title>Closure</title>
+  </head>
+  <body>
+    <h1>Closure</h1>
+    <picture>
+      <img src="https://i.ibb.co/THJ9kXY/brave-2024-05-22-09-52-58.png" />
+      <img src="https://i.ibb.co/1fK8Y2d/brave-2024-05-22-09-59-53.png" />
+      <div>
+        <h4>
+          Function tampilNama memiliki akses ke variabel nama padahal ada di
+          luar functionnya. Begitu kasus ini terjadi, inner function membutuhkan
+          variabel yang ada di parent scope-nya. Maka inner function disebut
+          dengan CLOSURE
+        </h4>
+        <img src="https://i.ibb.co/dfnbQ7R/brave-2024-05-22-10-03-33.png" />
+      </div>
+      <div>
+        <h4>Closure pada function factory menggunakan anonymous function</h4>
+        <img
+          src="https://i.ibb.co/ZxV0wBG/brave-2024-05-22-10-35-55.png"
+          class="smaller"
+        />
+      </div>
+      <div>
+        <h4>Mengapa menggunakan closure?</h4>
+        <img src="https://i.ibb.co/PMb1TPc/brave-2024-05-22-10-43-45.png" />
+        <img src="https://i.ibb.co/znT1Y8j/brave-2024-05-22-10-44-47.png" />
+      </div>
+    </picture>
+
+    <script>
+      function init1() {
+        let nama1 = "Alvin"; // local variable
+        function tampilNama1() {
+          // inner function (closure*)
+          console.log(nama1); // akses ke parent variable
+        }
+        tampilNama1();
+      }
+      init1();
+
+      // Contoh Function Factory
+      function init2() {
+        let nama2 = "Alvin";
+        function tampilNama2() {
+          console.log(nama2);
+        }
+        return tampilNama2; // mengembalikan function tampilNama2 tanpa dijalankan
+      }
+      let panggilNama2 = init2(); // agar tampilNama2 dijalankan, simpan ke dalam variabel. Sekarang function init2 yang sudah dijalankan sebagian, masuk ke variabel panggil nama
+      panggilNama2(); // sekarang jalankan panggilNama2 untuk menjalankan tampilNama2
+
+      // Function Factory (Membuat function sesuai/dari function yang lain)
+      function ucapkanSalam(waktu) {
+        return function (nama) {
+          console.log(
+            `Halo ${nama}, Selamat ${waktu}, semoga harimu menyenangkan!`
+          );
+        };
+      }
+      let selamatPagi = ucapkanSalam("Pagi");
+      let selamatSiang = ucapkanSalam("Siang");
+      let selamatMalam = ucapkanSalam("Malam");
+      selamatPagi("Alvin");
+      selamatSiang("Febrianto");
+
+      // Seolah-olah Memiliki Private Method/Variable (Program untuk mengetahui berapa kali tombol diklik)
+      // Kasus 0
+      let counter1 = 0;
+      let add1 = function () {
+        // karena hoisting, counter di dalam function jadi terpengaruh
+        return ++counter1;
+      };
+      counter1 = 10; // kelihatannya tidak ada masalah, namun saat sudah banyak baris ada baris kode di tengah yang mengubah counter
+      console.log(add1());
+      console.log(add1());
+      console.log(add1());
+
+      // Perbaikan 1
+      let add2 = function () {
+        let counter = 0;
+        return function () {
+          return ++counter;
+        };
+      };
+      let a = add2();
+      console.log(a());
+      console.log(a());
+      console.log(a());
+
+      // Perbaikan 2 (Menggunakan IIFE)
+      let add3 = (function () {
+        let counter = 0;
+        return function () {
+          return ++counter;
+        };
+      })();
+      console.log(add3());
+      console.log(add3());
+      console.log(add3());
+    </script>
+  </body>
+</html>
