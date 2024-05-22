@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 60vh;
+        border: 1px dashed darkslategray;
+      }
+      h4 {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>Execution Context, Hoisting & Scope</title>
+  </head>
+  <body>
+    <h1>Execution Context, Hoisting & Scope</h1>
+    <picture>
+      <img src="https://i.ibb.co/Ky8xhG3/brave-2024-05-21-14-18-46.png" />
+      <div>
+        <h4>
+          Scope: urutan username yang dicari pertama ialah variabel lokal di
+          dalam function, lalu argumen, jika tidak ada di function maka akan
+          keluar mencari di global scope-nya
+        </h4>
+        <img src="https://i.ibb.co/KVYR4JW/brave-2024-05-21-16-11-57.png" />
+      </div>
+    </picture>
+
+    <script>
+      // Creation phase pada global context
+      // Nama var = undefined
+      // Nama function = fn()
+      // Hoisting
+      // Memiliki akses: window = global object & this = window
+      console.log(nama1);
+      var nama1 = "Alvin";
+
+      // Execution phase
+      console.log(sayHello());
+      var nama2 = "Alvin";
+      var umur = 22;
+      function sayHello() {
+        return `Halo, nama saya ${nama2}, saya berumur ${umur} tahun`;
+      }
+      // Function membuat local execution context yang di dalamnya terdapat creation & execution phase
+      // Memiliki akses: Window & Arguments
+      // Hoisting
+
+      var nama = "Alvin Febrianto";
+      var username = "@alvinfebrianto";
+      function cetakUrl(username) {
+        // console.log(arguments); Sebenarnya argumen dimasukkan ke dalam object Arguments
+        var instagramUrl = "https://instagram.com/";
+        return instagramUrl + username;
+      }
+      console.log(cetakUrl(username));
+      // console.log(cetakUrl('@alvin')); Jika pada fungsi tidak memiliki parameter, namun saat memanggil fungsi ditambahkan argumen, maka..
+
+      function a() {
+        console.log("ini a");
+        function b() {
+          console.log("ini b");
+          function c() {
+            console.log("ini c");
+          }
+          c();
+        }
+        b();
+      }
+      a();
+
+      // Latihan (Coba tebak apa yang muncul di layar)
+      function satu() {
+        var nama = "Alvin";
+        console.log(nama);
+      }
+      function dua() {
+        console.log(nama);
+      }
+      console.log(nama);
+      var nama = "Arne";
+      satu();
+      dua("Klopp");
+      console.log(nama);
+      // Hasil: undefined, Alvin, Klopp, Klopp
+    </script>
+  </body>
+</html>
