@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Var, Let, & Const</title>
+  </head>
+  <body>
+    <h1>Var, Let, & Const</h1>
+    <picture>
+      <img src="https://i.ibb.co/gSzbWpy/Code-2024-05-22-15-39-22.png" />
+      <img src="https://i.ibb.co/XCp93tt/Code-2024-05-22-15-41-29.png" />
+      <img src="https://i.ibb.co/hsFLrcV/Code-2024-05-22-15-43-32.png" />
+      <img src="https://i.ibb.co/G0jQcdm/Code-2024-05-22-15-44-16.png" />
+      <img src="https://i.ibb.co/j667fsr/Code-2024-05-22-15-44-43.png" />
+    </picture>
+
+    <script>
+      // Var (Pada var terjadi hoisting)[Kode yang dicomment adalah kode yang dijalankan sehingga menghasilkan undefined]
+      // var i;
+      // var j;
+      console.log(i);
+      console.log(j);
+      // i = 10;
+      // j = "Alvin";
+      var i = 10;
+      var j = "Alvin";
+
+      /* Let & Const (Seperti perilaku pada bahasa pemrograman lain, akan error
+         karena sebaiknya sebelum memanggil sesuatu pastikan variabelnya dibuat dulu) 
+         console.log(l);
+         console.log(c);
+         let l = 5;
+         const c = "Febrianto"; */
+
+      // JavaScript menganut function scope, bukan block scope [tanda {}] sehingga kode berikut dapat berjalan normal
+      for (var j = 0; j < 10; j++) {
+        console.log(j);
+      }
+      console.log(j); // dapat mengakses isi variabel yang ada di dalam block
+
+      // IIFE / SIAF (Agar variabel di dalam function tidak dapat diakses dari luar)
+      (function () {
+        for (var k = 0; k < 10; k++) {
+          console.log(k);
+        }
+      })();
+      console.log(k);
+
+      // Let (Dengan let dapat menggunakan block scope)
+      for (let m = 0; m < 10; m++) {
+        console.log(m);
+      }
+      console.log(m);
+    </script>
+  </body>
+</html>
