@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        margin: 50px auto;
+        transition: 0.3s width, 0.3s height 0.3s, 0.3s margin-top 0.3s,
+          1s background-color;
+      }
+      .size {
+        width: 150px;
+        height: 150px;
+        margin-top: 25px;
+      }
+      .caption {
+        background-color: black;
+      }
+    </style>
+    <title>this pada Arrow Function</title>
+  </head>
+  <body>
+    <h1>this pada Arrow Function</h1>
+    <div>
+      <li>
+        Arrow function tidak memakai konsep this dan variabelnya akan ditelusuri
+        lagi di lokal parent terdekat
+      </li>
+      <li>
+        Declaration function memakai konsep this tapi bila variabelnya yg dicari
+        tidak ada dalam lokal maka langsung ditelusuri di window
+      </li>
+      <li>
+        Expression function memakai konsep this tapi bila variabel yang dicari
+        tidak dalam local maka ditelusuri lagi ke lokal parent terdekat
+      </li>
+    </div>
+    <picture>
+      <img src="https://i.ibb.co/qgx9w6S/Code-2024-05-24-14-52-24.png" />
+      <img src="https://i.ibb.co/xgs4HnN/Code-2024-05-24-14-53-11.png" />
+      <img src="https://i.ibb.co/HHvBg7V/Code-2024-05-24-14-53-59.png" />
+    </picture>
+    <div class="box"></div>
+
+    <script>
+      // Konsep this pada Arrow Function
+      // Constructor Function
+      const Mahasiswa1 = function () {
+        this.nama = "Alvin";
+        this.umur = "22";
+        this.sayHello = function () {
+          console.log(
+            `Halo, nama saya ${this.nama}, saya berumur ${this.umur}`
+          );
+        };
+      };
+      const alvin = new Mahasiswa1();
+
+      // Object Literal (Arrow function tidak memiliki konsep this. Maka, properti nama & umur di dalam function akan dicari di global)
+      const mhs1 = {
+        nama: "Alvin",
+        umur: 22,
+        sayHello: () => {
+          console.log(
+            `Halo, nama saya ${this.nama}, saya berumur ${this.umur}`
+          );
+        },
+      };
+
+      const Mahasiswa2 = function () {
+        this.nama = "Alvin";
+        this.umur = 22;
+        this.sayHello = function () {
+          console.log(
+            `Halo, nama saya ${this.nama}, saya berumur ${this.umur}`
+          );
+        };
+
+        setInterval(() => {
+          if (this.umur < 27) {
+            console.log(this.umur++); // arrow function tidak punya konsep this, maka this mencari ke lexical/parent
+          } else {
+            clearInterval;
+          }
+        }, 500);
+      };
+      const febrianto = new Mahasiswa2();
+
+      const box = document.querySelector(".box");
+      box.addEventListener("click", function () {
+        let satu = "size";
+        let dua = "caption";
+
+        if (this.classList.contains(satu)) {
+          [satu, dua] = [dua, satu];
+        }
+        this.classList.toggle(satu);
+        setTimeout(() => {
+          this.classList.toggle(dua);
+        }, 600);
+      });
+    </script>
+  </body>
+</html>
