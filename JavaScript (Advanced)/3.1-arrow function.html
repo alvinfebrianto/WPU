@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 70vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Arrow Function</title>
+  </head>
+  <body>
+    <h1>Arrow Function</h1>
+    <picture>
+      <img src="https://i.ibb.co/23yMnFW/brave-2024-05-24-09-32-29.png" />
+      <img src="https://i.ibb.co/G7JL6Ng/brave-2024-05-24-09-33-34.png" />
+      <img src="https://i.ibb.co/Tm1v1Yd/brave-2024-05-24-09-37-26.png" />
+      <img src="https://i.ibb.co/nRtKhQq/brave-2024-05-24-09-35-48.png" />
+      <img src="https://i.ibb.co/bWyJtQb/Code-2024-05-24-10-13-02.png" />
+      <img src="https://i.ibb.co/5k768jn/Code-2024-05-24-10-13-51.png" />
+      <img src="https://i.ibb.co/QdWNBWB/Code-2024-05-24-10-14-26.png" />
+    </picture>
+
+    <script>
+      // Function Expression
+      const tampilNama1 = function (nama1) {
+        return `Halo ${nama1}`;
+      };
+      console.log(tampilNama1("Alvin"));
+
+      /* Arrow Function - 1 Parameter (Jika 1, boleh tidak menggunakan kurung)
+         const tampilNama2 = (nama2) => {
+           return `Halo ${nama2}`;
+         };
+         console.log(tampilNama2("Febrianto"));
+
+      -  Jika isi function hanya return saja, dapat disingkat: (Implisit Return)
+         const tampilNama2 = nama2 => `Halo ${nama2}`;
+         console.log(tampilNama2("Febrianto")); */
+
+      const tampilNama2 = (nama2) => {
+        return `Halo ${nama2}`;
+      };
+      console.log(tampilNama2("Febrianto"));
+
+      const tampilNama3 = (nama3, waktu3) => {
+        return `Halo ${nama3}, selamat ${waktu3}`;
+      };
+      console.log(tampilNama3("Febrianto", "pagi"));
+
+      // Jika Tanpa Parameter, Kurung Wajib
+      const tampilNama4 = () => `Hello JavaScript!`;
+      console.log(tampilNama4());
+
+      let mahasiswa1 = ["Alvin", "Febrianto", "Gon"];
+      // let jumlahHuruf1 = mahasiswa1.map(function (nama) {
+      //   return nama.length;
+      // });
+      // console.log(jumlahHuruf1);
+
+      let jumlahHuruf1 = mahasiswa1.map((nama) => nama.length);
+      console.log(jumlahHuruf1);
+
+      let jumlahHuruf2 = mahasiswa1.map((nama) => ({
+        nama: nama,
+        jmlHuruf: nama.length,
+      }));
+      console.table(jumlahHuruf2);
+    </script>
+  </body>
+</html>
