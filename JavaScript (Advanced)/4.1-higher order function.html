@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      picture div h4 {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>Higher Order Function</title>
+  </head>
+  <body>
+    <h1>Higher Order Function</h1>
+    <picture>
+      <img src="https://i.ibb.co/gdB2m25/brave-2024-05-25-10-18-28.png" />
+      <img src="https://i.ibb.co/h7pY6zn/brave-2024-05-25-10-21-31.png" />
+      <img src="https://i.ibb.co/ygYVVhk/brave-2024-05-25-10-25-40.png" />
+      <div>
+        <h4>Callback: Function yang disimpan sebagai argumen</h4>
+        <h4>
+          Higher Order Function: Function yang memiliki callback sebagai argumen
+        </h4>
+        <img src="https://i.ibb.co/GQ2p4Vn/brave-2024-05-25-10-31-16.png" />
+      </div>
+      <img src="https://i.ibb.co/NNs54mv/brave-2024-05-25-10-42-03.png" />
+      <img src="https://i.ibb.co/CzQZChP/brave-2024-05-25-10-46-57.png" />
+      <img src="https://i.ibb.co/qpHjR3R/brave-2024-05-25-10-50-35.png" />
+    </picture>
+
+    <script>
+      setTimeout(function () {
+        console.log("Hello Advanced Javascript!");
+      }, 1000);
+
+      /* const tombol = document.querySelector(".submit");
+         tombol.addEventListener("click", function () {
+           console.log("tombol ditekan!");
+         }); */
+
+      // Loop for
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+
+      // Function
+      function repeatLog(n) {
+        for (let i = 0; i < n; i++) {
+          console.log(i);
+        }
+      }
+      repeatLog(10);
+
+      // Higher Order Function
+      function repeat(n, action) {
+        for (let i = 0; i < n; i++) {
+          action(i);
+        }
+      }
+      repeat(10, console.log);
+    </script>
+  </body>
+</html>
