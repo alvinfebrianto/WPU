@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      picture div h4 {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>Filter, Map & Reduce</title>
+  </head>
+  <body>
+    <h1>Filter, Map & Reduce</h1>
+    <picture>
+      <img src="https://i.ibb.co/dJfC9WL/brave-2024-05-25-11-18-06.png" />
+      <img src="https://i.ibb.co/SyDVDpg/brave-2024-05-25-11-20-35.png" />
+      <img src="https://i.ibb.co/Y8264hS/brave-2024-05-25-11-24-26.png" />
+      <img src="https://i.ibb.co/Q62DBdV/Code-2024-05-27-13-52-35.png" />
+      <img src="https://i.ibb.co/6BkcNDj/Code-2024-05-27-13-53-32.png" />
+      <img src="https://i.ibb.co/wBm06gB/Code-2024-05-27-13-54-22.png" />
+      <img src="https://i.ibb.co/b3BRx4z/Code-2024-05-27-13-55-41.png" />
+      <img src="https://i.ibb.co/FDs9Nz8/Code-2024-05-27-13-56-59.png" />
+    </picture>
+
+    <script>
+      const angka = [-1, 8, 9, 1, 4, -5, -4, 3, 2, 9];
+
+      // Mencari angka >= 3
+      const newAngka1 = [];
+      for (let i = 0; i < angka.length; i++) {
+        if (angka[i] >= 3) {
+          newAngka1.push(angka[i]);
+        }
+      }
+      console.log(newAngka1);
+
+      // Filter
+
+      const newAngka2 = angka.filter(function (a) {
+        return a >= 3;
+      });
+      // const newAngka2 = angka.filter((a) => a >= 3);
+      console.log(newAngka2);
+
+      // Map (Memetakan tiap elemen dalam array menggunakan fungsi yg baru)
+      // Kalikan semua elemen dengan 2
+
+      const newAngka3 = angka.map((a) => a * 2);
+      console.log(newAngka3);
+
+      // Reduce (Melakukan sesuatu terhadap seluruh elemen array)
+      // Jumlahkan seluruh elemen array
+
+      const newAngka4 = angka.reduce(
+        (accumulator, currentValue) => accumulator + currentValue
+        // (accumulator, currentValue, 5 -> default diisi 0, diisi 5 karena ingin mulai dari 5) => accumulator + currentValue
+      );
+      console.log(newAngka4);
+
+      // Method Chaining (Menggabungkan fungsi pada higher order function dalam 1× eksekusi) | Cari angka 3 -> Kali 3 -> Jumlahkan
+
+      const hasil = angka
+        .filter((a) => a > 5)
+        .map((a) => a * 3)
+        .reduce((acc, curV) => acc + curV);
+      console.log(hasil);
+    </script>
+  </body>
+</html>
