@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Latihan Template Literals</title>
+  </head>
+  <body>
+    <h1>Latihan Template Literals</h1>
+    <picture>
+      <img src="https://i.ibb.co/LY6KYHd/brave-2024-05-28-09-44-41.png" />
+      <img src="https://i.ibb.co/XZDbM1G/brave-2024-05-28-09-46-34.png" />
+      <img src="https://i.ibb.co/hdGxy6G/brave-2024-05-28-09-48-32.png" />
+      <img src="https://i.ibb.co/RSRLk5R/brave-2024-05-28-10-15-55.png" />
+      <img src="https://i.ibb.co/wMc3qWs/brave-2024-05-28-10-16-56.png" />
+      <img src="https://i.ibb.co/gZd9Sr7/brave-2024-05-28-10-21-36.png" />
+      <img src="https://i.ibb.co/g7QVsMJ/brave-2024-05-28-10-23-06.png" />
+      <img src="https://i.ibb.co/6rNMYpq/brave-2024-05-28-10-25-33.png" />
+      <img src="https://i.ibb.co/Njrg6LY/brave-2024-05-28-10-27-46.png" />
+    </picture>
+
+    <script>
+      // HTML Fragments
+      const mhs1 = {
+        nama: "Alvin",
+        umur: 22,
+        nim: "21097",
+        email: "alvin@unesa.ac.id",
+      };
+      const elemen1 = `<div class="mhs1">
+        <h2>${mhs1.nama}</h2>
+        <span class="nim">${mhs1.nim}</span>
+      </div>`;
+
+      // Looping
+      const mhs2 = [
+        { nama: "Alvin", email: "alvin@unesa.ac.id" },
+        { nama: "Febrianto", email: "febrianto@unesa.ac.id" },
+        { nama: "Zoro", email: "zoro@unesa.ac.id" },
+      ];
+      const elemen2 = `<div class="mhs2">
+        ${mhs2
+          .map(
+            (m) => `<ul>
+            <li>${m.nama}</li>
+            <li>${m.email}</li>
+        </ul>`
+          )
+          .join("")}
+      </div>`;
+
+      // Conditionals (Ternary)
+      const lagu = [
+        { judul: "Tetap dalam Jiwa", penyanyi: "Isyana Sarasvati" },
+        {
+          judul: "Kau Adalah",
+          penyanyi: "Isyana Sarasvati",
+          feat: "Rayi Putra",
+        },
+      ];
+      const elemen3 = `<div class="lagu">
+        ${lagu
+          .map(
+            (l) => `<ul>
+          <li>${l.penyanyi}</li>
+          <li>
+            ${l.judul} ${l.feat ? `(feat. ${l.feat})` : ""}
+          </li>
+        </ul>`
+          )
+          .join("")}
+      </div>`;
+
+      // Nested (HTML Fragments Bersarang)
+      const mhs3 = {
+        nama: "Alvin Febrianto",
+        semester: 5,
+        mataKuliah: [
+          "Rekayasa Web",
+          "Analisis Big Data",
+          "Pemrograman Sistem Informatif",
+          "Perancangan Sistem Berorientasi Objek",
+        ],
+      };
+      function cetakMataKuliah(mataKuliah) {
+        return `<ol>
+          ${mataKuliah.map((mk) => `<li>${mk}</li>`).join("")}
+          </ol>`;
+      }
+      const elemen4 = `<div class="mhs3">
+        <h2>${mhs3.nama}</h2>
+        <span class="semester">Semester: ${mhs3.semester}</span>
+        <h4>Mata Kuliah: </h4>
+        ${cetakMataKuliah(mhs3.mataKuliah)}
+      </div>`;
+
+      document.body.innerHTML = elemen4;
+      // document.body.innerHTML = elemen1;
+      // document.body.innerHTML = elemen2;
+      // document.body.innerHTML = elemen3;
+    </script>
+  </body>
+</html>
