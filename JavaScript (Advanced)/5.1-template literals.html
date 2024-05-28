@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Template Literals</title>
+  </head>
+  <body>
+    <h1>Template Literals</h1>
+    <picture>
+      <img src="https://i.ibb.co/LY6KYHd/brave-2024-05-28-09-44-41.png" />
+      <img src="https://i.ibb.co/XZDbM1G/brave-2024-05-28-09-46-34.png" />
+      <img src="https://i.ibb.co/hdGxy6G/brave-2024-05-28-09-48-32.png" />
+      <img src="https://i.ibb.co/RSRLk5R/brave-2024-05-28-10-15-55.png" />
+      <img src="https://i.ibb.co/wMc3qWs/brave-2024-05-28-10-16-56.png" />
+      <img src="https://i.ibb.co/gZd9Sr7/brave-2024-05-28-10-21-36.png" />
+      <img src="https://i.ibb.co/g7QVsMJ/brave-2024-05-28-10-23-06.png" />
+      <img src="https://i.ibb.co/6rNMYpq/brave-2024-05-28-10-25-33.png" />
+      <img src="https://i.ibb.co/Njrg6LY/brave-2024-05-28-10-27-46.png" />
+    </picture>
+
+    <script>
+      // Template Literals
+      const nama = "Alvin";
+      const umur = 22;
+      console.log(`Halo, nama saya ${nama}, dan saya ${umur} tahun.`);
+      console.log(`Halo, nama saya ` + nama + ", dan saya " + umur + " tahun.");
+
+      // Embedded Expressions
+      console.log(`${1 + 1}`);
+      // console.log(`${alert("Halo!")}`);
+      const x = 11;
+      console.log(`${x % 2 == 0 ? "genap" : "ganjil"}`);
+
+      // HTML Fragments
+      const mhs = {
+        nama: "Alvin",
+        umur: 22,
+        nim: "21097",
+        email: "alvin@unesa.ac.id",
+      };
+      const elemen = `<div class="mhs">
+        <h2>${mhs.nama}</h2>
+        <span class="nim">${mhs.nim}</span>
+      </div>`;
+      console.log(elemen);
+    </script>
+  </body>
+</html>
