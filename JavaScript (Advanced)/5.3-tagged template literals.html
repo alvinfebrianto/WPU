@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+        margin-top: 1rem;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      .hl {
+        background-color: aquamarine;
+      }
+    </style>
+    <title>Tagged Template Literals</title>
+  </head>
+  <body>
+    <script>
+      // Tagged Templates
+      const nama = "Alvin";
+      const umur = 22;
+      const email = "alvin@unesa.ac.id";
+
+      function highlight(strings, ...values) {
+        /* let result = "";
+           strings.forEach((str, i) => {
+             result += `${str}${values[i] || ""}`;
+           });
+           return result; */
+
+        return strings.reduce(
+          (result, str, i) =>
+            `${result}${str}<span class="hl">${values[i] || ""}</span>`,
+          ""
+        );
+      }
+
+      const str = highlight`Halo, nama saya ${nama}, saya ${umur} tahun, dan email saya adalah: ${email}.
+      
+      <picture>
+        <img src="https://i.ibb.co/fYZk2jC/brave-2024-05-28-15-33-21.png" />
+        <img src="https://i.ibb.co/ZGP7bk9/brave-2024-05-29-09-53-27.png" />
+        <img src="https://i.ibb.co/7kx1pwS/brave-2024-05-29-09-54-52.png" />
+        <img src="https://i.ibb.co/Bz3bvRH/brave-2024-05-29-09-57-13.png" />
+        <img src="https://i.ibb.co/rHsYbN8/brave-2024-05-29-09-59-56.png" />
+      </picture>`;
+
+      document.body.innerHTML = str;
+    </script>
+  </body>
+</html>
