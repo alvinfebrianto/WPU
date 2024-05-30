@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Destructuring Assignment</title>
+  </head>
+  <body>
+    <h1>Destructuring Assignment</h1>
+    <picture>
+      <img src="https://i.ibb.co/7k0h32x/brave-2024-05-29-10-07-10.png" />
+      <img src="https://i.ibb.co/FVVxGnP/brave-2024-05-29-11-21-47.png" />
+      <img src="https://i.ibb.co/gt58wr0/brave-2024-05-29-11-23-53.png" />
+    </picture>
+
+    <script>
+      // Destructuring Array
+      const perkenalan = ["Halo", "nama1", "saya", "Alvin Febrianto"];
+      // const salam = perkenalan[0];
+      // const [salam, satu, dua, nama1] = perkenalan;
+      const [salam, , , nama1] = perkenalan; // Skipping items
+      console.log(salam);
+
+      // Swap Items
+      let a = 1;
+      let b = 2;
+      console.log(a);
+      console.log(b);
+      [a, b] = [b, a];
+      console.log(a);
+      console.log(b);
+
+      // Return Value pada Function
+      function reVal() {
+        return [1, 2];
+      }
+      const [c, d] = reVal();
+      console.log(d);
+
+      // Rest Parameter Array
+      const [e, ...values] = [1, 2, 3, 4, 5];
+      console.log(e);
+      console.log(values);
+
+      // Destructuring Object
+      // Object Literal
+      const mhs1 = { nama2: "Alvin", umur1: 22 };
+      const { nama2, umur1 } = mhs1;
+      console.log(nama2);
+
+      // Assignment Tanpa Deklarasi Object
+      ({ nama3, umur2 } = { nama3: "Alvin", umur2: 22 });
+      console.log(nama3);
+
+      // Assign ke Variabel Baru
+      const mhs2 = { nama4: "Alvin", umur3: 22 };
+      const { nama4: n1, umur3: u1 } = mhs2;
+      console.log(u1);
+
+      // Memberikan Default Value
+      const mhs3 = { nama5: "Alvin", umur3: 22, email1: "alvin@unesa.ac.id" };
+      const { nama5, umur3, email1 = "email@gmail.com" } = mhs3; // melakukan pengecekan apakah pada object ada email, jika tidak maka diisi default value
+      console.log(email1);
+
+      // Memberikan Default Value + Assign ke Variabel Baru
+      const mhs4 = { nama6: "Alvin", umur4: 22, email2: "alvin@unesa.ac.id" };
+      const { nama6: n2, umur4: u2, email2: e1 = "email@gmail.com" } = mhs4;
+      console.log(e1);
+
+      // Rest Parameter Object
+      const mhs5 = { nama7: "Alvin", umur5: 22, email3: "alvin@unesa.ac.id" };
+      const { nama7, ...value } = mhs5;
+      console.log(value);
+
+      // Mengambil Field pada Object, setelah Dikirim sebagai Parameter untuk Function
+      const mhs6 = {
+        id1: 123,
+        nama8: "Alvin",
+        umur6: 22,
+        email4: "alvin@unesa.ac.id",
+      };
+      // function getIdMhs(mhs) {
+      function getIdMhs({ id1 }) {
+        // return mhs.id1;
+        return id1;
+      }
+      console.log(getIdMhs(mhs6)); // mengirim objek mhs6 sebagai argumen
+    </script>
+  </body>
+</html>
