@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      img.sm {
+        width: 30vh;
+      }
+    </style>
+    <title>for..of VS for..in</title>
+  </head>
+  <body>
+    <h1>for..of VS for..in</h1>
+    <picture>
+      <img
+        src="https://i.ibb.co/bdm8dVc/brave-2024-05-31-10-20-59.png"
+        class="sm"
+      />
+      <img src="https://i.ibb.co/YDMXrG7/brave-2024-05-31-10-22-31.png" />
+      <img
+        src="https://i.ibb.co/mtbvwBd/brave-2024-05-31-10-23-20.png"
+        class="sm"
+      />
+      <img src="https://i.ibb.co/r3sdZKM/brave-2024-05-31-11-33-15.png" />
+      <img src="https://i.ibb.co/19R8tNg/Code-2024-05-31-13-06-43.png" />
+      <img src="https://i.ibb.co/F3gSVz9/Code-2024-05-31-13-07-37.png" />
+      <img src="https://i.ibb.co/5n8VPgv/Code-2024-05-31-13-08-23.png" />
+      <img src="https://i.ibb.co/88xBFSr/Code-2024-05-31-13-09-07.png" />
+      <img src="https://i.ibb.co/xC0b8Tb/Code-2024-05-31-13-09-39.png" />
+    </picture>
+    <ul>
+      <li class="nama">Alvin</li>
+      <li class="nama">Febrianto</li>
+      <li class="nama">Gon</li>
+    </ul>
+
+    <script>
+      // for..of Array
+      const mhs1 = ["Alvin", "Febrianto", "Gon"];
+
+      /* for (let i = 0; i < mhs1.length; i++) {
+           console.log(mhs[i]);
+         } */
+      // mhs1.forEach((m) => console.log(m));
+      for (const m of mhs1) {
+        console.log(m);
+      }
+
+      // for..of String
+      const nama1 = "Alvin";
+      for (const n of nama1) {
+        console.log(n);
+      }
+
+      /* mhs1.forEach((m, i) => {
+           console.log(`${m} adalah mahasiswa ke-${i + 1}`);
+         }); */
+      for (const [i, m] of mhs1.entries()) {
+        console.log(`${m} adalah mahasiswa ke-${i + 1}`);
+      }
+
+      // for..of NodeList
+      const liNama = document.querySelectorAll(".nama");
+
+      // liNama.forEach((n) => console.log(n.textContent));
+      for (n of liNama) {
+        console.log(n.innerHTML);
+      }
+
+      // for..of Arguments
+      function jumlahkanAngka() {
+        // return arguments.reduce((a, i) => a + i); ^Error karena reduce tidak untuk arguments
+        // arguments.forEach((a) => (jumlah += a)); ^Error karena forEach tidak untuk arguments
+        let jumlah = 0;
+        for (a of arguments) {
+          jumlah += a;
+        }
+        return jumlah;
+      }
+      console.log(jumlahkanAngka(1, 2, 3, 4, 5));
+
+      // for..in Object
+      const mhs2 = { nama: "Alvin", umur: 22, email: "alvin@unesa.ac.id" };
+      for (m in mhs2) {
+        console.log(m);
+        // console.log(mhs[m]); ^Mengambil value, bukan index pada object
+      }
+    </script>
+  </body>
+</html>
