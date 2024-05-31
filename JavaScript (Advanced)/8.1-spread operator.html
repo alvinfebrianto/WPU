@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      .nama {
+        font-size: 6rem;
+        text-align: center;
+        letter-spacing: 2.5rem;
+        cursor: pointer;
+      }
+      .nama span {
+        display: inline-block;
+        transition: 0.3s;
+      }
+      .nama span:hover {
+        transform: scale(2) translateY(-20px);
+      }
+    </style>
+    <title>Spread Operator</title>
+  </head>
+  <body>
+    <h1>Spread Operator</h1>
+    <picture>
+      <img src="https://i.ibb.co/GxDSSHq/brave-2024-05-31-13-19-56.png" />
+      <img src="https://i.ibb.co/CJ01RWY/brave-2024-05-31-13-20-39.png" />
+    </picture>
+    <h1 class="nama">Alvin</h1>
+
+    <script>
+      // Spread Operator (Memecah iterables menjadi single element)
+      const mhs1 = ["Alvin", "Febrianto", "Gon"];
+      console.log(...mhs1); // Memecah array
+      console.log(...mhs1[0]); // Memecah string di dalam array
+
+      // Menggabungkan 2 Array
+      const dosen1 = ["Zoro", "L", "Light"];
+      const orang1 = [...mhs1, "Aji", ...dosen1];
+      // const orang1 = mhs1.concat(dosen);
+      console.log(orang1);
+
+      // Meng-copy Array
+      const mhs2 = [...mhs1];
+      console.log(mhs2);
+
+      // Script Hover Text
+      const nama = document.querySelector(".nama");
+      const huruf = [...nama.textContent]
+        .map((h) => `<span>${h}</span>`)
+        .join("");
+      nama.innerHTML = huruf;
+    </script>
+  </body>
+</html>
