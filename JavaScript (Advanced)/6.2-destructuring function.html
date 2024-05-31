@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 65vh;
+        border: 1px dashed darkslategray;
+      }
+      img.lg {
+        width: 110vh;
+      }
+    </style>
+    <title>Destructuring Function</title>
+  </head>
+  <body>
+    <h1>Destructuring Function</h1>
+    <picture>
+      <img src="https://i.ibb.co/7k0h32x/brave-2024-05-29-10-07-10.png" />
+      <img src="https://i.ibb.co/FVVxGnP/brave-2024-05-29-11-21-47.png" />
+      <img src="https://i.ibb.co/gt58wr0/brave-2024-05-29-11-23-53.png" />
+      <img
+        src="https://i.ibb.co/Y8sTMpW/Idle-2024-05-31-09-53-56.png"
+        class="lg"
+      />
+      <img
+        src="https://i.ibb.co/YyJrLJ4/Code-2024-05-31-09-55-31.png"
+        class="lg"
+      />
+    </picture>
+
+    <script>
+      // Destructuring
+      function penjumlahanPerkalian(a, b) {
+        return [a + b, a * b];
+      }
+      // const jumlah = penjumlahanPerkalian(2, 3);
+      // const jumlah = penjumlahanPerkalian(2, 3)[0]; jika hanya ingin penjumlahan
+      // const kali = penjumlahanPerkalian(2, 3)[1]; jika hanya ingin perkalian
+      const [jumlah, kali1] = penjumlahanPerkalian(2, 3);
+      console.log(jumlah);
+      console.log(kali1);
+
+      function kalkulasi1(a, b) {
+        return [a + b, a - b, a * b, a / b];
+      }
+      // penamaan tambah, kurang dst harus sesuai dengan urutan return jika menggunakan array
+      const [tambah1, kurang1, kali2, bagi1] = kalkulasi1(2, 3);
+      console.log(bagi1);
+
+      function kalkulasi2(a, b) {
+        return { tambah2: a + b, kurang2: a - b, kali3: a * b, bagi2: a / b };
+      }
+      const { bagi2, kurang2, kali3, tambah2 } = kalkulasi2(2, 3);
+      console.log(kurang2);
+
+      // Destructuring Function Arguments
+      const mhs1 = {
+        nama: "Alvin",
+        umur: 22,
+        email: "alvin@unesa.ac.id",
+        nilai: { tugas: 80, uts: 85, uas: 75 },
+      };
+      /* function cetakMhs(mhs1) {
+           return `Halo, nama saya ${mhs1.nama}, saya berumur ${mhs1.umur} tahun`;
+         } */
+      function cetakMhs1({ nama, umur }) {
+        return `Halo, nama saya ${nama}, saya berumur ${umur} tahun`;
+      }
+      /* function cetakMhs({ nama, umur, nilai }) {
+           return `Halo, nama saya ${nama}, saya berumur ${umur} tahun, dan nilai uas saya adalah ${nilai.uas}`;
+         } */
+      console.log(cetakMhs1(mhs1));
+
+      // Destructuring Bersarang (object nilai di dalam object mhs1)
+      function cetakMhs2({ nama, umur, nilai: { tugas, uts, uas } }) {
+        return `Halo, nama saya ${nama}, saya berumur ${umur} tahun, dan nilai uas saya adalah ${uas}`;
+      }
+      console.log(cetakMhs2(mhs1));
+    </script>
+  </body>
+</html>
