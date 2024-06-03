@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 85vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Rest Parameter</title>
+  </head>
+  <body>
+    <h1>Rest Parameter</h1>
+    <picture>
+      <img src="https://i.ibb.co/s12cGBn/brave-2024-05-31-16-19-39.png" />
+      <img src="https://i.ibb.co/b2m111q/Code-2024-06-03-11-15-52.png" />
+      <img src="https://i.ibb.co/ZHFWwxv/Code-2024-06-03-11-16-55.png" />
+      <img src="https://i.ibb.co/68YmTp4/Code-2024-06-03-11-17-43.png" />
+      <img src="https://i.ibb.co/Zmt1VnX/Code-2024-06-03-11-24-01.png" />
+    </picture>
+
+    <script>
+      // Rest Parameter [Rest hanya dapat diletakkan di akhir parameter]
+      function myFunc1(a, b, ...myArgs) {
+        return `a = ${a}, b = ${b}, myArgs = ${myArgs}`;
+        // return Array.from(arguments); ^Defaultnya, saat parameter kosong, namun argumen ada, akan masuk ke arguments
+        // return [...arguments]; ^Menggunakan spread parameter
+      }
+      console.log(myFunc1(1, 2, 3, 4, 5));
+
+      function jumlahkan(...angka) {
+        let total = 0;
+        // for..of a representasi dari array parameter angka
+        for (const a of angka) {
+          total += a;
+        }
+        return total;
+        // return angka.reduce((a, b) => a + b); ^Higher Order Function reduce
+      }
+      console.log(jumlahkan(1, 2, 3, 4, 5));
+
+      // Array Destructuring
+      const kelompok1 = ["Alvin", "Febrianto", "Gon", "Zoro"];
+      const [ketua, wakil, ...anggota] = kelompok1;
+      console.log(anggota);
+
+      // Object Destructuring
+      const team = {
+        pm: "Alvin",
+        frontEnd1: "Febrianto",
+        frontEnd2: "Gon",
+        backEnd: "Zoro",
+        ux: "Hendra",
+        devOps: "Feri",
+      };
+      const { pm, ...myTeam } = team;
+      console.log(myTeam);
+
+      // Filtering
+      function filterBy(type, ...values) {
+        return values.filter((v) => typeof v === type);
+      }
+      console.log(
+        filterBy("number", 1, 3, 2, "Alvin", false, 10, true, "Febrianto")
+      );
+    </script>
+  </body>
+</html>
