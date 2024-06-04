@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 85vh;
+        border: 1px dashed darkslategray;
+      }
+    </style>
+    <title>Callback</title>
+  </head>
+  <body>
+    <h1>Callback</h1>
+    <picture>
+      <img src="https://i.ibb.co/8xms767/brave-2024-06-04-10-16-55.png" />
+      <img src="https://i.ibb.co/B3YHK01/brave-2024-06-04-10-18-00.png" />
+    </picture>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Synchronous Callback
+      function halo(nama) {
+        alert(`Halo, ${nama}`);
+      }
+      //callback parameter ialah function halo
+      function tampilkanPesan(callback) {
+        const nama = `Alvin Febrianto`; //nama akan masuk sebagai parameter function halo
+        callback(nama); //function halo dipanggil di dalam function tampilkanPesan
+      }
+      tampilkanPesan(halo);
+
+      // Metode 2 Menggunakan Anonymous Function
+      // tampilkanPesan(nama => alert(`Halo, ${nama}`))
+
+      const mhs = [
+        {
+          nama: "Alvin",
+          nim: "21091",
+          email: "alvin@unesa.ac.id",
+          jurusan: "Manajemen Informatika",
+          idDosenWali: 1,
+        },
+        {
+          nama: "Febrianto",
+          nim: "21092",
+          email: "febrianto@unesa.ac.id",
+          jurusan: "Manajemen Informatika",
+          idDosenWali: 2,
+        },
+        {
+          nama: "Gon",
+          nim: "21093",
+          email: "gon@unesa.ac.id",
+          jurusan: "Teknik Informatika",
+          idDosenWali: 2,
+        },
+      ];
+      // mhs.forEach((m) => console.log(m.nama)); ^menampilkan properti nama, higher order function
+      // Simulasi Seolah Lama Mengambil Data pada Blocking,Synchronous
+      console.log("Mulai");
+      mhs.forEach((m) => {
+        for (let i = 0; i < 1000000; i++) {
+          let date = new Date();
+        }
+        console.log(m.nama);
+      });
+      console.log("Selesai");
+
+      // Asynchronous Callback
+      function getDataMahasiswa(url, success, error) {
+        let xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              success(xhr.response);
+            } else if (xhr.status === 404) {
+              error();
+            }
+          }
+        };
+
+        xhr.open("get", url);
+        xhr.send();
+      }
+
+      console.log("start");
+      getDataMahasiswa(
+        "10.1-callback.json",
+        (results) => {
+          const mhs = JSON.parse(results);
+          mhs.forEach((m) => console.log(m.nama));
+        },
+        () => {}
+      );
+      console.log("end");
+
+      // JQuery
+      console.log("mulai");
+      $.ajax({
+        url: "10.1-callback.json",
+        success: (mhs) => {
+          mhs.forEach((m) => console.log(m.nama));
+        },
+        error: (e) => {
+          console.log(e.responseText);
+        },
+      });
+      console.log("selesai");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+[
+  {
+    "nama": "Alvin",
+    "nim": "21091",
+    "email": "alvin@unesa.ac.id",
+    "jurusan": "Manajemen Informatika",
+    "idDosenWali": 1
+  },
+  {
+    "nama": "Febrianto",
+    "nim": "21092",
+    "email": "febrianto@unesa.ac.id",
+    "jurusan": "Manajemen Informatika",
+    "idDosenWali": 2
+  },
+  {
+    "nama": "Gon",
+    "nim": "21093",
+    "email": "gon@unesa.ac.id",
+    "jurusan": "Teknik Informatika",
+    "idDosenWali": 2
+  }
+]
