@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #f1f1f1;
+      }
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      img.sm {
+        width: 30vh;
+      }
+      img.lg {
+        width: 110vh;
+      }
+    </style>
+    <title>Asynchronous JavaScript</title>
+  </head>
+  <body>
+    <h1>Asynchronous JavaScript</h1>
+    <picture>
+      <img
+        src="https://i.ibb.co/q7HxYGm/brave-2024-06-03-12-09-08.png"
+        class="sm"
+      />
+      <img src="https://i.ibb.co/HKygW3s/brave-2024-06-03-12-10-41.png" />
+      <img src="https://i.ibb.co/rfvrQZK/brave-2024-06-03-12-11-44.png" />
+      <img src="https://i.ibb.co/k9QtqYJ/brave-2024-06-03-12-12-56.png" />
+      <img src="https://i.ibb.co/TWgbdWv/brave-2024-06-03-12-13-59.png" />
+      <img src="https://i.ibb.co/gvSsMPS/brave-2024-06-03-12-15-58.png" />
+      <img src="https://i.ibb.co/swkXHcy/brave-2024-06-03-22-42-05.png" />
+      <img src="https://i.ibb.co/W3QPyNh/brave-2024-06-03-22-43-09.png" />
+      <img src="https://i.ibb.co/7zKsFqs/brave-2024-06-03-22-44-07.png" />
+      <img src="https://i.ibb.co/N1mtgGj/brave-2024-06-03-22-44-48.png" />
+      <img src="https://i.ibb.co/TH3k4YF/brave-2024-06-03-22-48-55.png" />
+      <img src="https://i.ibb.co/nmQGF3q/brave-2024-06-03-22-50-38.png" />
+      <img src="https://i.ibb.co/nj5VQP9/brave-2024-06-03-22-54-16.png" />
+      <img src="https://i.ibb.co/k5Q1Hyq/brave-2024-06-03-22-56-29.png" />
+      <img src="https://i.ibb.co/p3BSmVn/brave-2024-06-03-23-00-49.png" />
+      <img src="https://i.ibb.co/JnTJddq/brave-2024-06-03-23-13-24.png" />
+      <img
+        src="https://i.ibb.co/H2wvZ9C/Code-2024-06-04-10-05-54.png"
+        class="lg"
+      />
+    </picture>
+
+    <script>
+      const prosesKompleks = () => `dua`;
+
+      // Contoh Blocking
+      console.log("satu"); // 1.masuk stack - eksekusi - tampil - hilang
+      console.log(prosesKompleks()); // 2.masuk stack - eksekusi(tunggu karena kompleks) - tampil - hilang
+      console.log("tiga"); // 3.masuk stack - eksekusi - tampil - hilang
+
+      // Contoh Asynchronous Callback (Solusi dari blocking)
+      console.log("empat"); // 1.masuk stack - eksekusi - tampil - hilang
+
+      /* 2.masuk stack - pindah Web API (karena asynchronous callback) - skip ke kode berikutnya
+               - tunggu 5 detik - pindah callback queue - event loop check
+               - jika ada antrian, masukkan kembali ke stack (namun stack harus kosong) */
+      setTimeout(() => {
+        console.log("lima"); // 4.eksekusi - tampil - hilang
+      }, 5000);
+
+      console.log("enam"); // 3.masuk stack - eksekusi - tampil - hilang
+    </script>
+  </body>
+</html>
