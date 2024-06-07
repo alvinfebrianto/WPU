@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-color: #f1f1f1;
+      }
+      picture {
+        display: flex;
+        align-items: flex-start;
+        gap: 4px;
+        flex-wrap: wrap;
+        pointer-events: none;
+      }
+      img {
+        width: 75vh;
+        border: 1px dashed darkslategray;
+      }
+      img.sm {
+        width: 30vh;
+      }
+      img.lg {
+        width: 110vh;
+      }
+    </style>
+    <title>Async Await</title>
+  </head>
+  <body>
+    <h1>Async Await</h1>
+    <picture>
+      <img src="https://i.ibb.co/cx5NrZS/brave-2024-06-07-14-05-23.png" />
+      <img src="https://i.ibb.co/st572qZ/Idle-2024-06-07-14-07-42.png" />
+      <img src="https://i.ibb.co/dtFFSqz/brave-2024-06-07-14-08-25.png" />
+    </picture>
+
+    <script>
+      // Contoh 1
+      /* const kode = new Promise((resolve) => {
+           setTimeout(() => {
+             resolve("selesai");
+           }, 2000);
+         });
+         kode.then(() => console.log(kode)); */
+
+      // Contoh 2
+      function kodePromise() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("selesai");
+          }, 2000);
+        });
+      }
+      // const kode = kodePromise();
+      // kode.then((kode) => console.log(kode));
+
+      // Contoh 3
+      async function kodeAsync() {
+        const kode = await kodePromise();
+        console.log(kode);
+      }
+      kodeAsync();
+
+      // Contoh 4
+      function kodePromise2() {
+        return new Promise((resolve, reject) => {
+          const waktu = 5000;
+          if (waktu < 5000) {
+            setTimeout(() => {
+              resolve("selesai");
+            }, waktu);
+          } else {
+            reject("kelamaan!");
+          }
+        });
+      }
+      const kode = kodePromise2();
+      kode.then((kode) => console.log(kode)).catch((kode) => console.log(kode));
+
+      // Contoh 5
+      async function kodeAsync2() {
+        try {
+          const kode2 = await kodePromise2();
+          console.log(kode2);
+        } catch (err) {
+          console.error(err);
+        }
+      }
+      kodeAsync2();
+    </script>
+  </body>
+</html>
