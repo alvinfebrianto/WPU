@@ -15,6 +15,12 @@ const fs = require("fs");
 // });
 
 // membaca isi file (synchronous)
-const data = fs.readFileSync("data/fs.txt", "utf-8");
-console.log(data);
+// const data = fs.readFileSync("data/fs.txt", "utf-8");
+// console.log(data);
 // console.log(data.toString());
+
+// membaca isi file (asynchronous)
+fs.readFile("data/fs.txt", "utf-8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
