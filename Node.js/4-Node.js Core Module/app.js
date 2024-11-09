@@ -20,7 +20,18 @@ const fs = require("fs");
 // console.log(data.toString());
 
 // membaca isi file (asynchronous)
-fs.readFile("data/fs.txt", "utf-8", (err, data) => {
-  if (err) throw err;
-  console.log(data);
+// fs.readFile("data/fs.txt", "utf-8", (err, data) => {
+//   if (err) throw err;
+//   console.log(data);
+// });
+
+// readline [membaca apa yang ditulis di terminal]
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+rl.question("Masukkan nama Anda: ", (nama) => {
+  console.log(`Terima kasih ${nama}`);
+  rl.close();
 });
