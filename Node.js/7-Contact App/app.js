@@ -1,15 +1,9 @@
 const yargs = require("yargs");
-
-// yargs.command(
-//   'add',
-//   'Menambahkan contact baru',
-//   () => {},
-//   (argv) => {console.log(argv.nama);}
-// );
+const contacts = require("./contacts")
 
 yargs.command({
   command: 'add',
-  describe: 'Menambahkan cntact baru',
+  describe: 'Menambahkan contact baru',
   builder: {
     nama: {
       describe: 'Nama Lengkap',
@@ -28,12 +22,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    const contact = {
-      nama: argv.nama,
-      email: argv.email,
-      noHP: argv.nohp,
-    };
-    console.log(contact)
+    contacts.simpanContact(argv.nama, argv.email, argv.noHP);
   },
 });
 
